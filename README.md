@@ -7,9 +7,9 @@ Write your Telegram Bot with Typescript and Telegraf, and deliver all over the w
 
 ## features
 
-- Host on `Cloudflare Workers` or running locally
 - `Typescript` Support
-- `Telegraf` Bot Framework
+- `Telegraf` bot framework
+- Host on `Cloudflare Workers` or running locally
 - `Jest` test framework
 - Debug locally with hot reload enabled
 - `yarn webhook enable/disable` for quick switch between poll and webhook
@@ -35,6 +35,7 @@ then:
 Fill in the `botToken` (if you don't have, create one from [@BotFather](http://t.me/BotFather)) in `src/secrets.ts`. For the other items, we can leave them blank until publish.
 
 ```typescript
+// src/secrets.ts
 export default {
   domain: '', // Domain for webhook
   webhook: '', // Webhook route. Use any URL-compatible character/string. Format: https://<domain>/webhook-<webhook>
@@ -45,14 +46,14 @@ export default {
 Now your bot is ready to go:
 
 ```bash
-> yarn launch # or `yarn dev`
+> yarn launch # or `yarn dev` - they are identical
 ```
 
 A simple echo bot is shipped with this boilerplate. All text will be echoed back by the bot.
 
 ## Publish
 
-1. Fill in everything needed to publish a worker in `wrangler.toml` and `src/secrets.ts` first. (For more information, check [CloudFlare Docs](https://developers.cloudflare.com/workers/cli-wrangler/commands#publish))
+1. Fill in everything needed to publish a worker in `wrangler.toml` and `src/secrets.ts` first. (For more information, see [CloudFlare Docs](https://developers.cloudflare.com/workers/cli-wrangler/commands#publish))
 2. `yarn pub` - This will automatically enable webhook and use `wrangler` to publish.
 
 **Caution**: If you enabled webhook, local dev server _**may not**_ work as expected.
@@ -75,13 +76,17 @@ _NOT RECOMMENDED DUE TO THE COMPLEXITY AND INCONVENIENCE._ However, it is useful
 
 #### `launch` / `dev`
 
-Setup local debug environment with hot reload supported
+Disable webhook and setup local debug environment with hot reload supported
 
 #### `webhook`
 
-Quick enable/disable webhook for telegram Bot API. Useful when publishing code to worker.
+Enable/disable webhook for telegram Bot API.
 
 Usage: `yarn webhook enable/disable/status`
+
+#### `pub`
+
+Enable webhook and publish the bot to Cloudflare Workers
 
 #### `test`
 
@@ -98,6 +103,10 @@ Build with `tsc` into `./dist`
 #### `build:watch`
 
 Same as `build`, with `-w` arg
+
+#### `clear`
+
+Delete `dist/`, `node_modules/`, `coverage/` and `worker/` with rimraf
 
 ## License
 
