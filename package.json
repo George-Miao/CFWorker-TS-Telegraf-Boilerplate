@@ -7,7 +7,7 @@
     "launch": "yarn webhook disable && nodemon src/index.ts",
     "dev": "yarn launch",
     "webhook": "_ () { ts-node src/util/webhook.ts \"$*\"; }; _",
-    "pub": "yarn webhook enable && wrangler publish",
+    "pub": "wrangler publish && yarn webhook enable",
     "test": "jest --watch",
     "coverage": "jest --collectCoverageFrom=src/**/*.ts --coverage",
     "build": "tsc",
