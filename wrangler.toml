@@ -1,0 +1,6 @@
+name = ""
+account_id = ""
+zone_id = ""
+type = "webpack"
+workers_dev = true
+webpack_config = "webpack.config.js"
