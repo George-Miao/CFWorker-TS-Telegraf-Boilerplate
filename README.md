@@ -35,7 +35,7 @@ then:
 Fill in the `botToken` (if you don't have, create one from [@BotFather](http://t.me/BotFather)) in `src/secrets.ts`. For the other items, we can leave them blank until publish.
 
 ```typescript
-// src/secrets.ts
+// Filename: src/secrets.ts
 export default {
   domain: '', // Domain for webhook
   webhook: '', // Webhook route. Use any URL-compatible character/string. Format: https://<domain>/webhook-<webhook>
