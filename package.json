@@ -12,7 +12,7 @@
     "build:watch": "tsc -w",
     "pub": "yarn webhook enable && wrangler publish",
     "webhook": "_ () { ts-node src/util/webhook.ts \"$*\"; }; _",
-    "clear": "rimraf dist node_modules coverage "
+    "clear": "rimraf dist node_modules coverage worker"
   },
   "keywords": [
     "telegram",
