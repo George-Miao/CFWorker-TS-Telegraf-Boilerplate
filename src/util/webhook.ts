@@ -7,9 +7,6 @@ const cmds = ['enable', 'disable', 'status']
   console.log()
   greenLog('==== Webhook helper ====')
 
-  if (Object.values(secrets).some(v => !v))
-    throw Error('\t`secrets.json` is not completed\n\n')
-
   const cmd = process.argv[2]
   if (!cmds.includes(cmd))
     throw new Error(
