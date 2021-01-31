@@ -4,3 +4,4 @@ yarn-error.log
 .vscode/
 coverage/
 dist/
+worker/
